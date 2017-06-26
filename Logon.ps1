@@ -45,7 +45,7 @@ try
         if($osArch -eq "64-bit")
         {
             $CloudbaseInitMsi = "CloudbaseInitSetup_Beta_x64.msi"
-            $programFilesDir = ${ENV:ProgramFiles(x86)}
+            $programFilesDir = $ENV:ProgramFiles
         }
         else
         {
