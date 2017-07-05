@@ -75,10 +75,10 @@ try
 
         $Host.UI.RawUI.WindowTitle = "Running SetSetupComplete..."
         & "$programFilesDir\Cloudbase Solutions\Cloudbase-Init\bin\SetSetupComplete.cmd"
-
-        $Host.UI.RawUI.WindowTitle = "Running Sysprep..."
-        $unattendedXmlPath = "$programFilesDir\Cloudbase Solutions\Cloudbase-Init\conf\Unattend.xml"
-        & "$ENV:SystemRoot\System32\Sysprep\Sysprep.exe" `/generalize `/oobe `/shutdown `/unattend:"$unattendedXmlPath"
+        
+        #$Host.UI.RawUI.WindowTitle = "Running Sysprep..."
+        #$unattendedXmlPath = "$programFilesDir\Cloudbase Solutions\Cloudbase-Init\conf\Unattend.xml"
+        #& "$ENV:SystemRoot\System32\Sysprep\Sysprep.exe" `/generalize `/oobe `/shutdown `/unattend:"$unattendedXmlPath"
     }
 }
 catch
