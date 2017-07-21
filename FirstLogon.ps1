@@ -82,12 +82,14 @@ function getHypervisor() {
 }
 
 $logonScriptPath = "$ENV:SystemRoot\Temp\Logon.ps1"
+$unattendPath = "$ENV:SystemRoot\Windows\System32\Sysprep\unattend_no_oobe.xml"
 
 try
 {
     $Host.UI.RawUI.WindowTitle = "Downloading Logon script..."
     $baseUrl = "https://raw.githubusercontent.com/Quardah/winprep/v1.0.0"
     (new-object System.Net.WebClient).DownloadFile("$baseUrl/Logon.ps1", $logonScriptPath)
+    (new-object System.Net.WebClient).DownloadFile("$baseUrl/unattend_no_oobe.xml", $logonScriptPath)
 
     $hypervisorStr = getHypervisor
     Write-Host "Hypervisor: $hypervisorStr"
